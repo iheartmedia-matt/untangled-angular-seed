@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/assets/styles/bootstrap.css">
+    <link rel="stylesheet" href="/static/assets/styles/main.css">
+</head>
+<body ng-app="app">
+
+<div class="container">
+    <untangled-header untangled-title="MyApp"></untangled-header>
+    <div class="content" ng-view=""></div>
+</div>
+
+
+<script src="/dist/lib.min.js"></script>
+<script src="dist/app.min.js"></script>
+</body>
+</html>

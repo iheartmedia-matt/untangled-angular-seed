@@ -1,0 +1,33 @@
+{
+  "name": "untangled-angular-seed",
+  "version": "0.0.0",
+  "authors": [
+    "bundance <mpevans@gmail.com>"
+  ],
+  "description": "Seed project for AngularJS apps",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.7",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "angular-animate": "~1.4.7",
+    "angular-aria": "~1.4.7",
+    "angular-cookies": "~1.4.7",
+    "angular-message-format": "~1.4.7",
+    "angular-messages": "~1.4.7",
+    "angular-mocks": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "angular-touch": "~1.4.7",
+    "lodash": "~3.10.1"
+  }
+}
