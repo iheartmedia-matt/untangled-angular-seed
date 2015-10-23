@@ -35,10 +35,26 @@ gulp.task('buildAppFiles', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('app.min.js'))
         .pipe(ngAnnotate())
-        .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/'));
 });
+
+gulp.task('deploy', function () {
+    gulp.src([
+        'scripts/app/*.module.js',
+        'scripts/app/*.js',
+        '!scripts/app/*.spec.js',
+        'scripts/app/**/module.js',
+        'scripts/app/**/*.js',
+        '!scripts/app/**/*.spec.js'
+    ])
+        .pipe(using())
+        .pipe(concat('app.min.js'))
+        .pipe(uglify())
+        .pipe(ngAnnotate())
+        .pipe(gulp.dest('./dist/'));
+});
+
 
 gulp.task('watch', ['buildAppFiles'], function () {
     gulp.watch('scripts/app/**/*.js', ['buildAppFiles']);

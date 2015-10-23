@@ -9,11 +9,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/assets/styles/bootstrap.css">
     <link rel="stylesheet" href="/static/assets/styles/main.css">
+
+    <base href="/">
 </head>
 <body ng-app="app">
 
-<div class="container">
-    <untangled-header untangled-title="MyApp"></untangled-header>
+<div class="container" ng-controller="appController as appCtrl">
+    <untangled-header untangled-title="Untangled Seed App" untangled-menu-items="appCtrl.menuItems"></untangled-header>
     <div class="content" ng-view=""></div>
 </div>
 
