@@ -1,13 +1,125 @@
-<div class="row marketing">
-    <h1>Untangled Seed App</h1>
+<div class="row">
+    <h2>About</h2>
+    <h3>Overview</h3>
     <p>
         This app has been designed to provide the barebones skeleton you need to start writing a scalable,
         well-architected AngularJS 1.x app with the minimum of configuration hassle, and the minimum of
         boilerplate code getting in your way.
     </p>
+    <p>
+        Most <a href="https://html5boilerplate.com/">boilerplate templates</a> include a tonne of other stuff, such
+        as old browser upgrade notices, viewport definitions, favicons, Google Analytics,
+        etc., etc. All of this is needed for production code, but it gets in your way if all you want is a clean
+        template to begin a new project with, to create a prototype, or just to experiment with AngularJS without
+        irrelevant HTML5 cruft getting in your way.
+    </p>
+    <p>
+        Equally, other <a href="https://github.com/angular/angular-seed">Angular Seed apps</a> may provide an appropriate
+        place for you to start, but provide you with limited build tools. There's no minification or concatenation,
+        and so you have to add manually all the files you create both to your index.html file, and your <code>karma.conf</code>
+        file.
+    </p>
+    <p>
+        To this end, this seed app is designed to get you up and running fast to explore AngularJS with the
+        minimum of boilerplate so you can really see the wood from the trees. You can prototype code quickly and easily,
+        with minifying, concatenating, source maps, and testing configuration all taken care of for you.
+    </p>
+    <h3>Main Features</h3>
+    <h4>Scaffolding HTML page (i.e index.html)</h4>
+    <p>
+        Index.html is the main HTML scaffolding page. It contains only a custom header directive to get you started
+        with directives, an <code>ng-view</code> directive in which your main content will be rendered via your
+        Angular Router, and a static footer.
+    </p>
+    <p>
+        Styling is minimal, and is provided by Bootstrap.css, and a small bit of custom CSS declared in
+        <code>main.css</code>, which keeps the footer sticking to the bottom of the page (see
+        <a href="https://css-tricks.com/snippets/css/sticky-footer/">CSS-Tricks</a> for more details).
+    </p>
+    <h4>App structure</h4>
+    <p>
+        The structure of the app has been written according to the inestimable John Papa's
+        <a href="https://github.com/johnpapa/angular-styleguide">style guide</a>, with the main app folder comprising
+        the following components:
+        <ul>
+            <li>the main appModule (config, run, constants, routes, etc,)</li>
+            <li>layout components (header, footer and sidebar directives)</li>
+            <li>routes (HTML templates and controllers needed for specific routes)</li>
+        </ul>
 
-</div>
+        Each folder contains all files necessary for the component to render, run and be tested.
+    </p>
+    <h4>Code Structure</h4>
+    <p>
+        The AngularJS code also complies with John's style recommendations, with <code>controllerAs</code> used
+        throughout, IIFE's enclosing component declarations to avoid globals, and the ViewModel represented as a
+        capture variable called <code>vm</code>.
+    </p>
+    <h3>Building the app</h3>
+    <p>
+        <code>gulp build</code>
+    </p>
+    <p>
+        Before running the app, you <b>MUST</b> call the build task from the command line (note: I'm assuming you're
+        not using Windows with these instructions).
+    </p>
+    <p>
+        Once built, you shouldn't need to rebuild unless you add a new file. Editing existing files will cause the app
+        to be rebuilt automatically.
+    </p>
+    <p>
+        The build task concatenates the files and minifies them, with the third party libraries built to
+        <code>dist/lib.min.js</code>, and your app's code built to <code>dist/app.min.js</code>. The build task also creates
+        sourcemaps, ensuring you can still debug the actual code, rather than an horrendous minified concatenated soup!
+    </p>
+    <p>
+        The build task also looks for any AngularJS directive templates that have been defined using
+        <code>templateUrl</code>. These are concatenated and written to a module, the contents of which are injected into
+        <code>$templateCache</code> for you. The benefits of this are that a single HTTP request need only be made
+        regardless of how many directives you create, and, more importantly, your directive tests can use the actual
+        partial HTML you use in your production code.
+    </p>
+    <p>
+        Just include the <code>partials</code> module in your tests, like so:
+    </p>
+    <p>
+        <code>beforeEach(module('partials'));</code>
+    </p>
+    <p>
+        and your directives will be magically populated with their proper partials' HTML (see Untangled.io's
+        'How to Unit Test a directive with templateURL' for more details). You can see an example of this in action in
+        <code>scripts/app/layout/header/header.directive.spec.js</code>
+    </p>
 
-<div class="footer">
-    <p>Mike Evans, Codernetic Ltd</p>
+    <h3>Running the app</h3>
+    <p>
+        <code>gulp serve</code>
+    </p>
+    <p>
+        Once run, browse to <code>127.0.0.1:8080</code>. To change the port, just type
+        <code>gulp serve --port=< your_port_number ></code>. For example, to serve the app on port 8000,
+        use <code>gulp serve --port=8000</code>
+    </p>
+    <p>
+        Running <code>gulp serve</code> causes a live reload, so all your app's files are automatically rebuilt (the
+        library files aren't - if you want those rebuilt, you'll need to call<code>gulp build</code> again).
+    </p>
+    <h3>Testing the app</h3>
+    <p>
+        <code>karma start</code>
+    </p>
+    <p>
+        This runs the tests in Chrome. To see the output of the tests, click the 'debug' button in the page that's
+        opened, and then open Chrome dev tools. You'll see the output of your tests in the console, and can also step
+        through them using the standard dev tools debugging commands.
+    </p>
+    <h3>Credits</h3>
+    <p>
+        This seed app was created by Mike Evans of <a href="http://untangled.io">Untangled.io</a>. Feel free to use it
+        as you see fit. You can clone it, fork it, do whatever you want with it. If you use it as part of a tutorial
+        or course, though, I'd be grateful if you could provide a link to Untangled.io :)
+    </p>
+    <p>
+        Any questions or queries, feel free to send them to mike . evans at untangled . io.
+    </p>
 </div>

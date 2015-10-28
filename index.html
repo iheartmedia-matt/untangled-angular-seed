@@ -14,11 +14,20 @@
 </head>
 <body ng-app="app">
 
-<div class="container" ng-controller="appController as appCtrl">
-    <untangled-header untangled-title="Untangled Seed App" untangled-menu-items="appCtrl.menuItems"></untangled-header>
-    <div class="content" ng-view=""></div>
-</div>
+    <div class="container page-wrap" ng-controller="appController as appCtrl">
+        <div class="row">
+            <div class="col-md-12">.
+                <untangled-header untangled-title="Untangled Seed App" untangled-menu-items="appCtrl.menuItems"></untangled-header>
+            </div>
+        </div>
+        <div class="content row">
+            <div class="col-md-12" ng-view=""></div>
+        </div>
 
+    </div>
+    <footer class="row site-footer">
+        <div>Angular Seed App by Untangled.io</div>
+    </footer>
 
 <script src="/dist/lib.min.js"></script>
 <script src="dist/app.min.js"></script>

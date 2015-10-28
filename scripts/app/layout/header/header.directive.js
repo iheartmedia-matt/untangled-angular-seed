@@ -10,14 +10,10 @@
         var directive = {
             restrict: 'E',
             scope: {
-                untangledTitle: '@',
+                title: '@untangledTitle',
                 menuItems: '=untangledMenuItems'
             },
-            templateUrl: 'scripts/app/layout/header/header.tpl.html',
-            link:function(scope, elem, attrs){
-                console.log('menuItem = ');
-                console.dir(scope.menuItems);
-            }
+            templateUrl: 'scripts/app/layout/header/header.tpl.html'
         };
 
         return directive;

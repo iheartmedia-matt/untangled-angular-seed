@@ -1,0 +1,69 @@
+/**************
+ * Header Styles
+ */
+
+.untangled-header ul {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: -5px;
+    padding-left: 0;
+}
+
+
+.untangled-header ul li {
+    display: block;
+    float: left;
+    margin-left: 2px;
+    position: relative;
+}
+
+.untangled-header ul li a {
+    border-radius: 3px;
+    display: block;
+    padding: 9px;
+    position: relative;
+}
+
+.untangled-header ul li a:hover,
+.untangled-header ul li a:focus {
+    background-color: #777777;
+    color: white;
+    font-weight: bold;
+    margin-left: -2px;
+    text-decoration: none;
+}
+
+/**************
+ * Content
+*/
+.content {
+    border-top: 1px solid #777777;
+}
+
+
+/***************
+ * Sticky Footer
+ */
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.page-wrap {
+    margin-bottom: -100px;
+    /* make this equal to footer height */
+    min-height: 100%;
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+footer, .page-wrap:after {
+    height: 100px;
+}
+footer {
+    border-top: 1px solid #777777;
+    padding-top: 10px;
+    text-align: center;
+}

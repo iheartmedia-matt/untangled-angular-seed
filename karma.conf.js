@@ -4,21 +4,32 @@ module.exports = function(config) {
         basePath: '',
 
         frameworks: ['jasmine'],
+
+        plugins: [
+            'karma-jasmine',
+            'karma-ng-html2js-preprocessor'
+        ],
+
         files: [
-            'dist/lib.min.js',
-            'scripts/app/app.module.js',
-            'scripts/app/*.js',
+            'bower_components/lodash/lodash.js',
+            'bower_components/angular/angular.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'bower_components/angular-resource/angular-resource.js',
+            'bower_components/angular-sanitize/angular-sanitize.js',
+            'bower_components/angular-route/angular-route.js',
+            'scripts/app/appModule/app.module.js',
+            'scripts/app/appModule/*.js',
             'scripts/app/**/*.module.js',
             'scripts/app/**/*.js',
-            'scripts/app/**/*.spec.js',
-            'scripts/app/**/*.html'
+            'scripts/testing/jasmineMatchers.js',
+            'scripts/app/**/*.html',
+            'scripts/app/**/*.spec.js'
         ],
 
         exclude: [],
 
         preprocessors: {
-            'scripts/app/**/*.html': ['ng-html2js'],
-            'scripts/app/**/!(*.mock|*.spec).js': ['coverage']
+            'scripts/app/**/*.html': ['ng-html2js']
         },
 
         ngHtml2JsPreprocessor: {
