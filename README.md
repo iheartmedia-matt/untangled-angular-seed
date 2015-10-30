@@ -97,4 +97,3 @@ This seed app was created by Mike Evans of <a href="http://untangled.io">Untangl
 as you see fit. You can clone it, fork it, do whatever you want with it. If you use it as part of a tutorial
 or course, though, I'd be grateful if you could provide a link to Untangled.io :)
 
-Any questions or queries, feel free to send them to mike . evans at untangled . io.
