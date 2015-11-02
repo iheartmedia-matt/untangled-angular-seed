@@ -25,7 +25,7 @@ Styling is minimal, and is provided by (Bootstrap 3.0)[http://getbootstrap.com/]
 `main.css`, which keeps the footer sticking to the bottom of the page (see
 (CSS-Tricks)[https://css-tricks.com/snippets/css/sticky-footer/] for more details).
     
-##App structure<
+##App structure
 
 The structure of the app has been written according to the inestimable John Papa's
 (style guide)[https://github.com/johnpapa/angular-styleguide], with the main app folder comprising
@@ -44,8 +44,8 @@ throughout, IIFE's enclosing component declarations to avoid globals, and the Vi
 capture variable called `vm`.
 
 #Requirements
-To install this repo, you'll need (git)[https://git-scm.com/] and (Node)[https://nodejs.org/] installed.
-
+To install this repo, you'll need [git](https://git-scm.com/) and [Node](https://nodejs.org/) installed.
+    
 #Installation
 
 From the command line, clone the `untangled-angular-seed` repo into a directory of your choice: 
@@ -80,19 +80,20 @@ Once run, browse to `127.0.0.1:8080`
 
 To change the port, just type
 
-```gulp serve --port=< your_port_number >```
+`gulp serve --port=< your_port_number >`
 
 For example, to serve the app on port 8000, type
 
-```gulp serve --port=8000```
+`gulp serve --port=8000`
 
 Running `gulp serve` causes a live reload, so all your app's files are automatically rebuilt whenever you save your
 changes (note: the library files aren't rebuilt - if you want those rebuilt, you'll need to call `gulp build` again).
 
-# Testing the app
-```karma start```
+# Running the tests
+`karma start`
 
-This seed app was created by Mike Evans of <a href="http://untangled.io">Untangled.io</a>. Feel free to use it
+#Credits
+This seed app was created by Mike Evans of [Untangled.io](http://untangled.io). Feel free to use it
 as you see fit. You can clone it, fork it, do whatever you want with it. If you use it as part of a tutorial
-or course, though, I'd be grateful if you could provide a link to Untangled.io :)
+or course, though, I'd be grateful if you could provide a link to [Untangled.io](http://untangled.io) :)
 
