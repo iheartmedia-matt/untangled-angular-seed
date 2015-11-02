@@ -1,4 +1,4 @@
-# untangled-angular-seed - a minimal AngularJS seed app done correctly
+# untangled-angular-seed - a minimal AngularJS 1.x seed app
 
 This project provides all you need to get your AngularJS app started. The seed app:
 
@@ -11,7 +11,7 @@ This project provides all you need to get your AngularJS app started. The seed a
 - automatically compiles your directives' partials into their own Angular module and stores them in Angular's `$templateCache` for you.
 
 ##Main Features
-###Scaffolding HTML page (i.e index.html)
+###Scaffolding HTML page (index.html)
 
 Index.html is the main HTML scaffolding page. It's not a complete, production-ready page like the [HTML5 Boilerplate](https://html5boilerplate.com/)
 template, but that's by design. By avoiding the heavy meta-data and old-browser fallbacks of such production-ready
@@ -45,7 +45,8 @@ The main body of the HTML page (without CSS classnames) looks as follows:
             <div ng-view=""></div>
         </div>
     </div>
-    <footer">
+    <!-- Sticky footer -->
+    <footer>
         <div>Angular Seed App by Untangled.io</div>
     </footer>
 </body>
@@ -57,13 +58,47 @@ The structure of the app has been written according to the inestimable John Papa
 [style guide](https://github.com/johnpapa/angular-styleguide), with the main app folder comprising
 the following components:
 
-- the main appModule (config, run, constants, routes, etc.)
+- the main appModule components (config, run, constants, routes, etc.)
 - layout components (header, footer and sidebar directives)
 - routes (HTML templates and controllers needed for specific routes)
 
+### Folder structure
 Each folder contains all files necessary for the component to render, run and be tested.
 
-#Code Structure
+```
+.bowerrc                                <-- bower settings
+.git/                                   <-- git folder
+.gitignore                              <-- git ignore file
+README.md                               <-- this file
+bower.json                              <-- bower component settings (e.g. list of library files to install)
+bower_components/                       <-- bower components (the files that become lib.min.js)
+dist/                                   <-- compiled files for distribution
+gulpfile.js                             <-- gulp tasks for building and running the app
+karma-conf.js                           <-- karma test runner config
+node_modules/                           <-- node modules (the files that are used to build and run the app)
+package.json                            <-- node module settings (e.g. list of build files to install)
+scripts/                                <-- the app's code (finally!)
+`------ app/
+        |--- appModule/                 <-- components needed by the app)
+        |    |--- app.config.js         <-- app configuration (currently sets HTML5 mode)              
+        |    |--- app.constants.js      <-- put app-specific constants here (currently sets app's title)
+        |    |--- app.controller.js     <-- main controller for the app
+        |    |--- app.module.js         <-- register the app and its module dependencies
+        |    |--- app.routes.js         <-- define the app's routes and their corresponding controllers and templates
+        |    |--- app.run.js            <-- put any code that needs to be run before the app itself starts here
+        |    |--- app.values.js         <-- app-specific, non-constant values (menu-items are currently defined here)
+        |--- layout/                    <-- main layout components (header, footer, etc.) 
+        |    |--- footer/
+        |    |    |--- footer.directive <--  
+        |--- styles/                      <-- generic styles
+        |    `--- _base.scss
+        |--- app.js                       <-- main module (bootstrapper)
+        |--- app.scss                     <-- main style file
+        `--- index.html                   <-- index file
+```
+
+
+###Code Structure
 
 The app's code also complies fully with John Papa's style recommendations, with `controllerAs` used
 throughout, IIFEs enclosing component declarations to avoid globals, and the ViewModel represented as a
@@ -76,7 +111,7 @@ To install this repo, you'll need [git](https://git-scm.com/) and [Node](https:/
 
 From the command line, clone the `untangled-angular-seed` repo into a directory of your choice: 
 
-`git clone git@github.com:bundance/untangled-angular-seed.git ```
+`git clone git@github.com:bundance/untangled-angular-seed.git`
 
 Change directory to the untangled-angular-seed directory and do an npm install:
 
@@ -100,6 +135,7 @@ And that's it! The app has now been installed, complete with the following depen
 - Lodash
 
 # Running the app
+To run the app, type:
 `gulp serve`
     
 Once run, browse to `127.0.0.1:8080`
@@ -113,10 +149,13 @@ For example, to serve the app on port 8000, type
 `gulp serve --port=8000`
 
 Running `gulp serve` causes a live reload, so all your app's files are automatically rebuilt whenever you save your
-changes (note: the library files aren't rebuilt - if you want those rebuilt, you'll need to call `gulp build` again).
+changes (note: the library files aren't rebuilt - if you want those rebuilt, you'll need to run `gulp build` again).
 
 # Running the tests
+You run the tests using:
 `karma start`
+
+
 
 #Credits
 This seed app was created by Mike Evans of [Untangled.io](http://untangled.io). Feel free to use it

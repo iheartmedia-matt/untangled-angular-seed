@@ -1,3 +1,17 @@
-/**
- * Created by mikeevans on 28/09/2015.
- */
+(function(){
+    'use strict';
+
+    angular
+        .module('app')
+        .directive('untangledFooter', untangledFooter);
+
+    function untangledFooter(){
+
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'scripts/app/layout/header/footer.tpl.html'
+        };
+
+        return directive;
+    }
+})();
