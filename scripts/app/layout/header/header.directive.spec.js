@@ -2,50 +2,10 @@ describe('Header Directive: untangledHeader', function() {
 
     'use strict';
 
-    var $compile,
-        $scope;
-
-    beforeEach(function() {
-        addToDeepEqualMatcher();
-
-    });
-
-    beforeEach(module('app'));
-    beforeEach(module('ngRoute'));
-    beforeEach(module('partials'));
-
-    var element,
-        scope,
-        isolateScope;
-
-    beforeEach(inject(function(_$rootScope_, _$compile_) {
-        var $rootScope = _$rootScope_;
-        $compile = _$compile_;
-        $scope = $rootScope.$new();
-    }));
-
-    beforeEach(function(){
-        $scope.menuItems = [{
-                title: 'home',
-                href: 'home/'
-            },
-            {
-                title: 'about',
-                href: 'about/'
-            }];
-
-        createDirective($scope, '<untangled-header untangled-title="Untangled Seed App" untangled-menu-items="menuItems" ></untangled-header>');
-    });
-
-    function createDirective(scope, directiveCreationHTML){
-        element = angular.element(directiveCreationHTML);
-        element = $compile(element)(scope);
-        scope.$digest();
-
-        isolateScope = element.isolateScope();
-        return element;
-    }
-
+    var testHelper,
+        $scope,
+        isolateScope,
+        element;
 
     describe('Directive initialisation', function() {
 
@@ -65,4 +25,37 @@ describe('Header Directive: untangledHeader', function() {
         });
     });
 
+    // Add Jasmine Matcher
+    beforeEach(function() {
+        addToDeepEqualMatcher();
+
+    });
+
+    // Import app's dependencies
+    beforeEach(module('app'));
+    beforeEach(module('ngRoute'));
+    beforeEach(module('partials'));
+    beforeEach(module('testHelper'));
+
+    // Inject the dependencies needed for the tests
+    beforeEach(inject(function(_$rootScope_, _testHelper_) {
+        var $rootScope = _$rootScope_;
+        $scope = $rootScope.$new();
+        testHelper = _testHelper_;
+    }));
+
+
+    beforeEach(function(){
+        $scope.menuItems = [{
+                title: 'home',
+                href: 'home/'
+            },
+            {
+                title: 'about',
+                href: 'about/'
+            }];
+
+        element = testHelper.createDirective($scope, '<untangled-header untangled-title="Untangled Seed App" untangled-menu-items="menuItems" ></untangled-header>');
+        isolateScope = element.isolateScope();
+    });
 });

@@ -4,7 +4,8 @@ describe('Footer Directive: untangledFooter', function() {
 
     var $compile,
         $scope,
-        element;
+        element,
+        testHelper;
 
     describe('Directive initialisation', function() {
 
@@ -13,43 +14,22 @@ describe('Footer Directive: untangledFooter', function() {
         });
     });
 
-    // Add Jasmine Matcher
-    beforeEach(function() {
-        addToDeepEqualMatcher();
-    });
-
-    // Import app's dependdencies
+    // Import app's dependencies
     beforeEach(module('app'));
     beforeEach(module('ngRoute'));
     beforeEach(module('partials'));
+    beforeEach(module('testHelper'));
 
     // Inject the dependencies needed for the tests
-    beforeEach(inject(function(_$rootScope_, _$compile_) {
+    beforeEach(inject(function(_$rootScope_, _$compile_, _testHelper_) {
         var $rootScope = _$rootScope_;
         $compile = _$compile_;
         $scope = $rootScope.$new();
+        testHelper = _testHelper_;
     }));
 
     beforeEach(function(){
-        element = createDirective($scope, '<untangled-footer></untangled-footer>');
+        element = testHelper.createDirective($scope, '<untangled-footer></untangled-footer>');
     });
-
-    /////////// HELPER FUNCTIONS ///////////
-
-    /**
-     * Pass in a scope and the HTML containing the directive under test, and this function will compile the
-     * directive and return its element, ready for testing
-     *
-     * @param scope
-     * @param directiveCreationHTML
-     * @returns {*}
-     */
-    function createDirective(scope, directiveCreationHTML){
-        element = angular.element(directiveCreationHTML);
-        element = $compile(element)(scope);
-        scope.$digest();
-
-        return element;
-    }
 
 });

@@ -21,7 +21,7 @@ module.exports = function(config) {
             'scripts/app/appModule/*.js',
             'scripts/app/**/*.module.js',
             'scripts/app/**/*.js',
-            'scripts/testing/jasmineMatchers.js',
+            'scripts/testing/*.js',
             'scripts/app/**/*.html',
             'scripts/app/**/*.spec.js'
         ],
