@@ -76,7 +76,7 @@
         The build task also looks for any AngularJS directive templates that have been defined using
         <code>templateUrl</code>. These are concatenated and written to a module, the contents of which are injected into
         <code>$templateCache</code> for you. The benefits of this are that a single HTTP request need only be made
-        regardless of how many directives you create, and, more importantly, your directive tests can use the actual
+        regardless of how many directives you create. More importantly, your directive tests can use the actual
         partial HTML you use in your production code.
     </p>
     <p>
@@ -95,7 +95,6 @@
     opened, and then open Chrome dev tools. You'll see the output of your tests in the console, and can also step
     through them using the standard dev tools debugging commands.
     </p>
-    <h3>Credits</h3>
     <h3>Running the app</h3>
     <p>
         <code>gulp serve</code>

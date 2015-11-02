@@ -48,17 +48,16 @@ To install this repo, you'll need (git)[https://git-scm.com/] and (Node)[https:/
 
 #Installation
 
-From the command line, clone the `untangled-angular-seed` repo into a directory of your choice. 
+From the command line, clone the `untangled-angular-seed` repo into a directory of your choice: 
 
-``` git clone git@github.com:bundance/untangled-angular-seed.git ```
+`git clone git@github.com:bundance/untangled-angular-seed.git ```
 
-Change directory to the untangled-angular-seed directory
+Change directory to the untangled-angular-seed directory and do an npm install:
 
-``` cd untangled-angular-seed directory ```
-
-Do an npm install:
-
-``` npm install ```
+```
+cd untangled-angular-seed
+npm install
+```
 
 And that's it! The app has now been installed, complete with the following dependencies:
  
@@ -75,7 +74,7 @@ And that's it! The app has now been installed, complete with the following depen
 - Lodash
 
 # Running the app
-    ```gulp serve```
+`gulp serve`
     
 Once run, browse to `127.0.0.1:8080`
 
