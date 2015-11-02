@@ -1,11 +1,14 @@
 # untangled-angular-seed - a minimal AngularJS seed app done correctly
+
 This project provides all you need to get your AngularJS app started. The seed app:
+
 - uses minimal boilerplate code so it gets out of your way
-- uses the correct architectural styles and best practice so you can start writing your app knowing it's correct right from the start.
-- provides simple automated-build tooling that automatically minifies and concatenates your code without any configuration required
+- uses a best practice architectural style so you can start writing your app knowing it's correct right from the start.
+- provides a simple automated build that automatically minifies and concatenates your code without any configuration required
 - provides a simple installation routine
 - comes with its own development server out of the box, letting you run your app easily
-- automatically compiles your directives' partials into their own Angular module and stores them in `$templateCache` for you.
+- watches your app's files and live-reloads them on any change
+- automatically compiles your directives' partials into their own Angular module and stores them in Angular's `$templateCache` for you.
 
 ##Main Features
 ###Scaffolding HTML page (i.e index.html)
@@ -16,14 +19,37 @@ pages, you can see the app's scaffolding structure and directives more clearly, 
 not specific to the app itself.
 
 Accordingly, `index.html` comprises:
--a custom header directive featuring a simple way to provide top navigation menus 
--an `ng-view` directive in which your main content will be rendered according to the routing options
+- a custom header directive (`untangled-header`), featuring a simple way to provide top navigation menus 
+- an `ng-view` directive in which your main content will be rendered according to the routing options
 you provide in `scripts/app/appModule/app.routes.js`
--a static footer.
+- a static footer.
 
 Styling is minimal, and is provided by [Bootstrap 3.0](http://getbootstrap.com/), and a small bit of custom CSS declared in
 `main.css`, which keeps the footer sticking to the bottom of the page (see
 [CSS-Tricks](https://css-tricks.com/snippets/css/sticky-footer/) for more details).
+
+The main body of the HTML page (without CSS classnames) looks as follows:
+
+```
+<!-- Bootstrap the app by name -->
+<body ng-app="app">
+    <!-- Declare the main app controller -->
+    <div ng-controller="appController as appCtrl">
+            <div>
+                <!-- custom header directive -->
+                <untangled-header untangled-title="Untangled Seed App" untangled-menu-items="appCtrl.menuItems"></untangled-header>
+            </div>
+        </div>
+        <div>
+            <!-- main content -->
+            <div ng-view=""></div>
+        </div>
+    </div>
+    <footer">
+        <div>Angular Seed App by Untangled.io</div>
+    </footer>
+</body>
+```
     
 ##App structure
 
@@ -31,16 +57,16 @@ The structure of the app has been written according to the inestimable John Papa
 [style guide](https://github.com/johnpapa/angular-styleguide), with the main app folder comprising
 the following components:
 
--the main appModule (config, run, constants, routes, etc,)
--layout components (header, footer and sidebar directives)
--routes (HTML templates and controllers needed for specific routes)
+- the main appModule (config, run, constants, routes, etc.)
+- layout components (header, footer and sidebar directives)
+- routes (HTML templates and controllers needed for specific routes)
 
 Each folder contains all files necessary for the component to render, run and be tested.
 
 #Code Structure
 
-The AngularJS code also complies fully with John's style recommendations, with `controllerAs` used
-throughout, IIFE's enclosing component declarations to avoid globals, and the ViewModel represented as a
+The app's code also complies fully with John Papa's style recommendations, with `controllerAs` used
+throughout, IIFEs enclosing component declarations to avoid globals, and the ViewModel represented as a
 capture variable called `vm`.
 
 #Requirements
