@@ -10,7 +10,7 @@ This project provides all you need to get your AngularJS app started. The seed a
 ##Main Features
 ###Scaffolding HTML page (i.e index.html)
 
-Index.html is the main HTML scaffolding page. It's not a complete, production-ready page like the (HTML5 Boilerplate)[https://html5boilerplate.com/]
+Index.html is the main HTML scaffolding page. It's not a complete, production-ready page like the [HTML5 Boilerplate](https://html5boilerplate.com/)
 template, but that's by design. By avoiding the heavy meta-data and old-browser fallbacks of such production-ready
 pages, you can see the app's scaffolding structure and directives more clearly, without being distracted by HTML that's
 not specific to the app itself.
@@ -21,14 +21,14 @@ Accordingly, `index.html` comprises:
 you provide in `scripts/app/appModule/app.routes.js`
 -a static footer.
 
-Styling is minimal, and is provided by (Bootstrap 3.0)[http://getbootstrap.com/], and a small bit of custom CSS declared in
+Styling is minimal, and is provided by [Bootstrap 3.0](http://getbootstrap.com/), and a small bit of custom CSS declared in
 `main.css`, which keeps the footer sticking to the bottom of the page (see
-(CSS-Tricks)[https://css-tricks.com/snippets/css/sticky-footer/] for more details).
+[CSS-Tricks](https://css-tricks.com/snippets/css/sticky-footer/) for more details).
     
 ##App structure
 
 The structure of the app has been written according to the inestimable John Papa's
-(style guide)[https://github.com/johnpapa/angular-styleguide], with the main app folder comprising
+[style guide](https://github.com/johnpapa/angular-styleguide), with the main app folder comprising
 the following components:
 
 -the main appModule (config, run, constants, routes, etc,)
