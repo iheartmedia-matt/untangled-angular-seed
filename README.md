@@ -52,6 +52,7 @@ And that's it! The app has now been installed, complete with the following depen
 
 # Running the app
 To run the app, type:
+
 `gulp serve`
     
 Once run, browse to `127.0.0.1:8080`
@@ -143,49 +144,48 @@ specific to a particular component are all contained within the same folder, nam
 ### Folder structure in detail
 
 ```
-.bowerrc                                        <-- bower settings
-.git/                                           <-- git folder
-.gitignore                                      <-- git ignore file
-README.md                                       <-- this file
-bower.json                                      <-- bower component settings (e.g. list of library files to install)
-bower_components/                               <-- bower components (the files that become lib.min.js)
-dist/                                           <-- compiled files for distribution
-gulpfile.js                                     <-- gulp tasks for building and running the app
-karma-conf.js                                   <-- karma test runner config
-node_modules/                                   <-- node modules (the files that are used to build and run the app)
-package.json                                    <-- node module settings (e.g. list of build files to install)
-scripts/                                        <-- the app's code (finally!)
-`------ app/        
-        |--- appModule/                         <-- components needed by the app)
-        |    |--- app.config.js                 <-- app configuration (currently sets HTML5 mode)              
-        |    |--- app.constants.js              <-- put app-specific constants here (currently sets app's title)
-        |    |--- app.controller.js             <-- main controller for the app
-        |    |--- app.module.js                 <-- register the app and its module dependencies
-        |    |--- app.routes.js                 <-- define the app's routes and their corresponding controllers and templates
-        |    |--- app.run.js                    <-- put any code that needs to be run before the app itself starts here
-        |    |--- app.values.js                 <-- app-specific, non-constant values (menu-items are currently defined here)
-        |--- layout/                            <-- main layout components (header, footer, etc.) 
-        |    |--- footer/       
-        |    |    |--- footer.directive.js      <-- footer directive definition 
-        |    |    |--- footer.directive.spec.js <-- footer directive test
-        |    |    |--- footer.directive.spec.js <-- footer directive template
-        |    |--- header/       
-        |    |    |--- header.directive.js      <-- header directive definition 
-        |    |    |--- header.directive.spec.js <-- header directive test
-        |    |    |--- header.directive.spec.js <-- header directive template
-        |--- routes/                            <-- app route definitions (controllers and templates)
-        |    |--- about/
-        |    |    |--- about.html               <-- html template for about page
-        |    |--- home/
-        |    |    |--- home.html                <-- html template for home page
-        |    |    |--- home.controller.js       <-- controller for home page
-statc/                                          <-- static files
-     |--- assets/                                 
-     |          |--- styles/                    <-- CSS style declarations
-     |                      |--- bootstrap.css  <-- Bootstrap 3.0 styles        
-     |                      |--- main.css       <-- custom app-specific styles
-        |--- app.scss                           <-- main style file
-        `--- index.html                         <-- index file
+.bowerrc                                         <-- bower settings
+.git/                                            <-- git folder
+.gitignore                                       <-- git ignore file
+README.md                                        <-- this file
+bower.json                                       <-- bower component settings (e.g. list of library files to install)
+bower_components/                                <-- bower components (the files that become lib.min.js)
+dist/                                            <-- compiled files for distribution
+gulpfile.js                                      <-- gulp tasks for building and running the app
+karma-conf.js                                    <-- karma test runner config
+node_modules/                                    <-- node modules (the files that are used to build and run the app)
+package.json                                     <-- node module settings (e.g. list of build files to install)
+scripts/                                         <-- the app's code (finally!)
+------ app/        
+       |--- appModule/                          <-- components needed by the app)
+       |    |--- app.config.js                  <-- app configuration (currently sets HTML5 mode)              
+       |    |--- app.constants.js               <-- put app-specific constants here (currently sets app's title)
+       |    |--- app.controller.js              <-- main controller for the app
+       |    |--- app.module.js                  <-- register the app and its module dependencies
+       |    |--- app.routes.js                  <-- define the app's routes and their corresponding controllers and templates
+       |    |--- app.run.js                     <-- put any code that needs to be run before the app itself starts here
+       |    |--- app.values.js                  <-- app-specific, non-constant values (menu-items are currently defined here)
+       |--- layout/                             <-- main layout components (header, footer, etc.) 
+       |    |--- footer/       
+       |    |    |--- footer.directive.js       <-- footer directive definition 
+       |    |    |--- footer.directive.spec.js  <-- footer directive test
+       |    |    |--- footer.directive.spec.js  <-- footer directive template
+       |    |--- header/       
+       |    |    |--- header.directive.js       <-- header directive definition 
+       |    |    |--- header.directive.spec.js  <-- header directive test
+       |    |    |--- header.directive.spec.js  <-- header directive template
+       |--- routes/                             <-- app route definitions (controllers and templates)
+       |    |--- about/
+       |    |    |--- about.html                <-- html template for about page
+       |    |--- home/
+       |    |    |--- home.html                 <-- html template for home page
+       |    |    |--- home.controller.js        <-- controller for home page
+static/                                         <-- static files
+      |--- assets/                                 
+      |          |--- styles/                   <-- CSS style declarations
+      |                      |--- bootstrap.css <-- Bootstrap 3.0 styles        
+      |                      |--- main.css      <-- custom app-specific styles
+--- index.html                                  <-- index file (scaffolding HTML page)
 ```
 
 
