@@ -9,7 +9,7 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'scripts/app/layout/header/footer.tpl.html'
+            templateUrl: 'scripts/app/layout/footer/footer.tpl.html'
         };
 
         return directive;

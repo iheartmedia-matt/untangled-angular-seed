@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .constant('œ', {
+        .constant('APP_CONSTANTS', {
             title: 'Untangled Seed App'
         });
 })();
